@@ -1,0 +1,62 @@
+SELECT * 
+FROM movies m 
+WHERE m.vote_average >= 3 
+AND m.vote_average <= 4
+
+SELECT * 
+FROM movies m 
+WHERE m.title = "Ant-Man" 
+
+SELECT m.title, m.overview 
+FROM movies m 
+JOIN g IN m.genres
+WHERE g.name="Comedy" 
+
+SELECT * 
+FROM Movies m 
+WHERE STARTSWITH (m.title, "A")
+
+SELECT * 
+FROM Movies m 
+WHERE m.title BETWEEN "A" AND "B"
+
+// excluding paths
+// expensive, takes up lots of space in index (cost)
+
+SELECT m.title, m.id
+FROM Movies m where contains( m.overview, "Morpheus")
+
+SELECT m.title, m.id
+FROM Movies m where m.overview = "Documentary"
+
+SELECT m.title, m.id
+FROM Movies m where m.id = "movie100397"
+
+//cinemas
+SELECT c.name FROM cinemas c where c.type='cinema'
+
+
+// search for cinemas in san jose area
+
+SELECT c.name, c.location FROM cinemas c
+ WHERE ST_WITHIN(c.location, 
+{ 
+    "type": "Polygon",  
+    "coordinates": [[ 
+    [-121.88452363014221,37.413800350662875],
+    [-121.97035431861877,37.39089085641704],
+    [-121.95936799049377,37.29317426435305],
+    [-121.80624604225159,37.27186719156333],
+    [-121.78633332252502,37.34286730373346],
+    [-121.88452363014221,37.413800350662875]
+]]})
+
+// find something within 3 miles of convention center
+
+SELECT c.name, c.location FROM cinemas c WHERE ST_DISTANCE(c.location, { 
+    "type": "Point", 
+    "coordinates": [-121.889125, 37.33034] 
+}) < 3 * 1600
+
+
+
