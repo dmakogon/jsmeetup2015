@@ -66,6 +66,16 @@ All kidding aside: It's a great question. Hopefully this won't be a blocker for 
 
 Someone asked me to show server-side stored procedures. I apologize for not having any server side code prepared for this evening's demo. That would fill an entire presentation: stored procedures, pre-triggers, post-triggers, user-defined functions, transactions... So, since we didn't cover it, let me at least provide a link to [this documentation](https://azure.microsoft.com/en-us/documentation/articles/documentdb-programming/) which will walk you
 through the basics.
+
+### Request Units
+
+Just to clarify, based on several questions: Each operation has a specific cost, measured in Request Units (RU). This varies quite a bit, and we saw examples around 2 RUs all the way up to nearly 800 RUs (when we searched for a substring within each of the many-thousand movie documents, rather than relying on a Full Text Search solution). Assuming the collection's content
+doesn't change, RU's for a given query should remain constant.
+
+Each DocumentDB collection has one of three RU tiers (up to 2500 RUs / sec / collection), and this tier is dynamically changeable.
+
+And for the record, no, I did *not* intentionally use a query with 3.14 RU's just so I could say it took **Pi RU's**. That was a complete coincidence. :)
+
 ## Credits
 
 Since I used some movie data from [themoviedb.org](http://themoviedb.org) for my demos, I'm obligated to provide this bit of
