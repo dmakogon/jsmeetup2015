@@ -28,8 +28,6 @@ addRangeIndex(collLink, function (err) {
 
 
 function addRangeIndex(collLink, callback) {
-
-    console.log('adding index to ' + collLink);
        
      var indexPolicySpec = {
         includedPaths: [
