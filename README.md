@@ -62,6 +62,10 @@ an extended commute?
 
 All kidding aside: It's a great question. Hopefully this won't be a blocker for you.
 
+### Server-side scripts
+
+Someone asked me to show server-side stored procedures. I apologize for not having any server side code prepared for this evening's demo. That would fill an entire presentation: stored procedures, pre-triggers, post-triggers, user-defined functions, transactions... So, since we didn't cover it, let me at least provide a link to [this documentation](https://azure.microsoft.com/en-us/documentation/articles/documentdb-programming/) which will walk you
+through the basics.
 ## Credits
 
 Since I used some movie data from [themoviedb.org](http://themoviedb.org) for my demos, I'm obligated to provide this bit of
