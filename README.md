@@ -19,7 +19,7 @@ things to consider when modeling document databases vs relational databases.
 
 This would be a lengthy discussion / blog post. For now, let me offer a few things:
 
- * Several months ago, I did a live broadcast called "Polyglot Persistence: Choosing the right storage mix."
+ * Several months ago, I did a live broadcast called [Polyglot Persistence: Choosing the right storage mix](https://mva.microsoft.com/en-US/training-courses/polyglot-persistence-choosing-the-right-azure-storage-mix-8465).
  This talk, co-presented by Ryan CrawCour (of the DocumentDB team) goes through several
  database types (key/value, document, relational, graph, colum) and highlights optimum use cases for each. And
  then it brings them all together into a single app. Hopefully this helps visualize some of the differences.
